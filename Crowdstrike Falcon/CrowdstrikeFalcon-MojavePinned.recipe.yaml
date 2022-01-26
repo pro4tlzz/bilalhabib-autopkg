@@ -1,8 +1,6 @@
-Description: |
-  This recipe downloads the Falcon Sensor MacOS based on the PolicyID you specify. The pkg is then uploaded
-  to your JAMF along with an install script used in the policy. Variables are inserted into the policy for licensing the
-  Falcon Sensor. A smart group is also created which has criteria based on whether the application is installed and on a compatible OS and whether
-  the neccessary config profile is installed
+Description: | 
+   NOTE This recipe doesn't work as the download processor seems to fail with this policy ID
+
 Identifier: com.github.pro4tlzz.jamf.CrowdstrikeFalcon-MojavePinned
 ParentRecipe: com.github.mlbz521.download.CrowdStrikeFalcon
 MinimumVersion: '2.3'

@@ -6,6 +6,7 @@
         <frequency>Ongoing</frequency>
         <trigger_checkin>true</trigger_checkin>
         <trigger_enrollment_complete>false</trigger_enrollment_complete>
+        <trigger_other>--installfalcon</trigger_other>
          <category>
             <name>%POLICY_CATEGORY%</name>
         </category>
