@@ -23,7 +23,7 @@
             <criterion>
             <name>UDID</name>
             <priority>2</priority>
-            <and_or>and</and_or>
+            <and_or>or</and_or>
             <search_type>is</search_type>
             <value>%PROFILE_UUID2%</value>
             <opening_paren>false</opening_paren>
