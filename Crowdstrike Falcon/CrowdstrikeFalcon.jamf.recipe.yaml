@@ -44,14 +44,14 @@ Process:
     script_category: "%POLICY_CATEGORY%"
     replace_script: "false"
 
-- Processor: com.github.grahampugh.jamf-upload.processors/JamfPolicyUploader
-  Arguments:
-    policy_name: "%POLICY_NAME%"
-    policy_template: "%POLICY_TEMPLATE%"
-    replace_policy: "false"
-
 - Processor: com.github.grahampugh.jamf-upload.processors/JamfComputerGroupUploader
   Arguments:
     computergroup_template: "%GROUP_TEMPLATE%"
     computergroup_name: "%GROUP_NAME%"
     replace_group: "false"
+
+- Processor: com.github.grahampugh.jamf-upload.processors/JamfPolicyUploader
+  Arguments:
+    policy_name: "%POLICY_NAME%"
+    policy_template: "%POLICY_TEMPLATE%"
+    replace_policy: "false"
