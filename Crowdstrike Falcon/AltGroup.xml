@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <computer_group>
-    <name>Falcon Profile Installed, Falcon Agent not installed</name>
+    <name>%GROUP_NAME%</name>
     <is_smart>true</is_smart>
     <criteria>
         <size>3</size>

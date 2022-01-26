@@ -1,7 +1,8 @@
 Description: |
   This recipe downloads the Falcon Sensor MacOS based on the PolicyID you specify. The pkg is then uploaded
   to your JAMF along with an install script used in the policy. Variables are inserted into the policy for licensing the
-  Falcon Sensor. A smart group is also created which has criteria based on whether the application is installed
+  Falcon Sensor. A smart group is also created which has criteria based on whether the application is installed and on a compatible OS and whether
+  the neccessary config profile is installed
 Identifier: com.github.pro4tlzz.jamf.CrowdstrikeFalcon
 ParentRecipe: com.github.mlbz521.download.CrowdStrikeFalcon
 MinimumVersion: '2.3'
@@ -24,8 +25,8 @@ Input:
   SCRIPT_NAME: FalconScript.sh
   SCRIPT_PRIORITY: After
   GROUP_TEMPLATE: SmartGroup.xml
-  GROUP_NAME: Crowdstrike Falcon Mac Sensor Not Installed - Testing
-
+  GROUP_NAME: Falcon Profile Installed, Falcon Agent not installed
+  PROFILE_UUID: 123
 Process:
 
 - Processor: com.github.grahampugh.jamf-upload.processors/JamfPackageUploader
