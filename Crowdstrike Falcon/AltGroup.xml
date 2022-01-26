@@ -22,7 +22,7 @@
         </criterion>
         <criterion>
             <name>Operating System Version</name>
-            <priority>0</priority>
+            <priority>2</priority>
             <and_or>and</and_or>
             <search_type>less than</search_type>
             <value>10.14</value>
