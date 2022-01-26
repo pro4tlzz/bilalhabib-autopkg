@@ -24,7 +24,9 @@ Input:
   SCRIPT_PRIORITY: After
   GROUP_TEMPLATE: AltGroup-MojavePinned.xml
   GROUP_NAME: Falcon Profile Installed, Falcon Agent not installed - Mojave Pinned
-  PROFILE_UUID: 123
+  PROFILE_UUID1: 123
+  PROFILE_UUID2: 123
+  
 Process:
 
 - Processor: com.github.grahampugh.jamf-upload.processors/JamfPackageUploader

@@ -16,13 +16,22 @@
             <priority>1</priority>
             <and_or>and</and_or>
             <search_type>is</search_type>
-            <value>%PROFILE_UUID%</value>
+            <value>%PROFILE_UUID1%</value>
+            <opening_paren>false</opening_paren>
+            <closing_paren>false</closing_paren>
+        </criterion>
+            <criterion>
+            <name>UDID</name>
+            <priority>2</priority>
+            <and_or>and</and_or>
+            <search_type>is</search_type>
+            <value>%PROFILE_UUID2%</value>
             <opening_paren>false</opening_paren>
             <closing_paren>false</closing_paren>
         </criterion>
         <criterion>
             <name>Operating System Version</name>
-            <priority>2</priority>
+            <priority>3</priority>
             <and_or>and</and_or>
             <search_type>is like</search_type>
             <value>10.14</value>

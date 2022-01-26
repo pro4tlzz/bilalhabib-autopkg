@@ -26,7 +26,9 @@ Input:
   SCRIPT_PRIORITY: After
   GROUP_TEMPLATE: AltGroup-N1.xml
   GROUP_NAME: Falcon Profile Installed, Falcon Agent not installed - N1
-  PROFILE_UUID: 123
+  PROFILE_UUID1: 123
+  PROFILE_UUID2: 123
+
 Process:
 
 - Processor: com.github.grahampugh.jamf-upload.processors/JamfPackageUploader
