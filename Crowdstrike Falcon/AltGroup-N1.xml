@@ -34,7 +34,7 @@
             <priority>3</priority>
             <and_or>and</and_or>
             <search_type>greater than or equal to</search_type>
-            <value>10.14</value>
+            <value>10.15</value>
             <opening_paren>false</opening_paren>
             <closing_paren>false</closing_paren>
         </criterion>
