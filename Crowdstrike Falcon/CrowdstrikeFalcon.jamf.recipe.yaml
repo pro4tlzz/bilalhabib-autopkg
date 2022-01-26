@@ -24,9 +24,10 @@ Input:
   SCRIPT_PARAMETER5: license
   SCRIPT_NAME: FalconScript.sh
   SCRIPT_PRIORITY: After
-  GROUP_TEMPLATE: SmartGroup.xml
+  GROUP_TEMPLATE: AltGroup.xml
   GROUP_NAME: Falcon Profile Installed, Falcon Agent not installed
   PROFILE_UUID: 123
+
 Process:
 
 - Processor: com.github.grahampugh.jamf-upload.processors/JamfPackageUploader
