@@ -1,0 +1,58 @@
+Description: |
+  This recipe downloads the Falcon Sensor MacOS based on the PolicyID you specify. The pkg is then uploaded
+  to your JAMF along with an install script used in the policy. Variables are inserted into the policy for licensing the
+  Falcon Sensor. A smart group is also created which has criteria based on whether the application is installed and on a compatible OS and whether
+  the neccessary config profile is installed
+Identifier: com.github.pro4tlzz.jamf.CrowdstrikeFalcon
+ParentRecipe: com.github.mlbz521.download.CrowdStrikeFalcon
+MinimumVersion: '2.3'
+
+Input:
+  NAME: Crowdstrike Falcon Mac Sensor
+  CATEGORY: Testing
+  POLICY_CATEGORY: Testing
+  POLICY_NAME: "Install N-1 %NAME%"
+  POLICY_TEMPLATE: FalconPolicyTemplate.xml
+  CLIENT_ID: 123
+  CLIENT_SECRET: 123
+  POLICY_ID: 123
+  API_REGION_URL: https://api.crowdstrike.com
+  PARAMETER5_VALUE: 123-E1
+  PARAMETER4_VALUE: 123
+  SCRIPT_FILENAME: FalconScript.sh
+  SCRIPT_PARAMETER4: token
+  SCRIPT_PARAMETER5: license
+  SCRIPT_NAME: FalconScript.sh
+  SCRIPT_PRIORITY: After
+  GROUP_TEMPLATE: AltGroup-N1.xml
+  GROUP_NAME: Falcon Profile Installed, Falcon Agent not installed
+  PROFILE_UUID: 123
+Process:
+
+- Processor: com.github.grahampugh.jamf-upload.processors/JamfPackageUploader
+  Arguments:
+    pkg_category: "%CATEGORY%"
+
+- Processor: StopProcessingIf
+  Arguments:
+    predicate: "pkg_uploaded == True"
+
+- Processor: com.github.grahampugh.jamf-upload.processors/JamfScriptUploader
+  Arguments:  
+    script_path: "%SCRIPT_FILENAME%"
+    script_parameter4: "%SCRIPT_PARAMETER4%"
+    script_parameter5: "%SCRIPT_PARAMETER5%"
+    script_category: "%POLICY_CATEGORY%"
+    replace_script: "false"
+
+- Processor: com.github.grahampugh.jamf-upload.processors/JamfComputerGroupUploader
+  Arguments:
+    computergroup_template: "%GROUP_TEMPLATE%"
+    computergroup_name: "%GROUP_NAME%"
+    replace_group: "false"
+
+- Processor: com.github.grahampugh.jamf-upload.processors/JamfPolicyUploader
+  Arguments:
+    policy_name: "%POLICY_NAME%"
+    policy_template: "%POLICY_TEMPLATE%"
+    replace_policy: "false"

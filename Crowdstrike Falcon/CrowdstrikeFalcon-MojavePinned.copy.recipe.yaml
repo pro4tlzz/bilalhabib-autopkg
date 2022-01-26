@@ -24,10 +24,9 @@ Input:
   SCRIPT_PARAMETER5: license
   SCRIPT_NAME: FalconScript.sh
   SCRIPT_PRIORITY: After
-  GROUP_TEMPLATE: AltGroup.xml
-  GROUP_NAME: Falcon Profile Installed, Falcon Agent not installed
+  GROUP_TEMPLATE: AltGroup-MojavePinned.xml
+  GROUP_NAME: Falcon Profile Installed, Falcon Agent not installed - Mojave Pinned
   PROFILE_UUID: 123
-
 Process:
 
 - Processor: com.github.grahampugh.jamf-upload.processors/JamfPackageUploader
