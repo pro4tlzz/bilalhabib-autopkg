@@ -1,8 +1,7 @@
 Description: |
-  This recipe downloads the signed Firefox installer package from Mozilla,
-  uploads the pkg to your Jamf Pro Server/Distribution Point using variables
-  set in the environment, and then updates the policy if a new pkg is uploaded.
-  The grahampugh-recipes repo is required. 
+  This recipe downloads the Falcon Sensor MacOS based on the PolicyID you specify. The pkg is then uploaded
+  to your JAMF along with an install script used in the policy. Variables are inserted into the policy for licensing the
+  Falcon Sensor. A smart group is also created which has criteria based on whether the application is installed
 Identifier: com.github.pro4tlzz.jamf.CrowdstrikeFalcon
 ParentRecipe: com.github.mlbz521.download.CrowdStrikeFalcon
 MinimumVersion: '2.3'
@@ -43,16 +42,16 @@ Process:
     script_parameter4: "%SCRIPT_PARAMETER4%"
     script_parameter5: "%SCRIPT_PARAMETER5%"
     script_category: "%POLICY_CATEGORY%"
-    replace_script: "True"
+    replace_script: "false"
 
 - Processor: com.github.grahampugh.jamf-upload.processors/JamfPolicyUploader
   Arguments:
     policy_name: "%POLICY_NAME%"
     policy_template: "%POLICY_TEMPLATE%"
-    replace_policy: "True"
+    replace_policy: "false"
 
 - Processor: com.github.grahampugh.jamf-upload.processors/JamfComputerGroupUploader
   Arguments:
     computergroup_template: "%GROUP_TEMPLATE%"
     computergroup_name: "%GROUP_NAME%"
-    replace_group: "True"
+    replace_group: "false"
