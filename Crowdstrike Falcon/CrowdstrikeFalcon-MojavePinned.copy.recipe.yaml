@@ -3,15 +3,15 @@ Description: |
   to your JAMF along with an install script used in the policy. Variables are inserted into the policy for licensing the
   Falcon Sensor. A smart group is also created which has criteria based on whether the application is installed and on a compatible OS and whether
   the neccessary config profile is installed
-Identifier: com.github.pro4tlzz.jamf.CrowdstrikeFalcon
+Identifier: com.github.pro4tlzz.jamf.CrowdstrikeFalcon-MojavePinned
 ParentRecipe: com.github.mlbz521.download.CrowdStrikeFalcon
 MinimumVersion: '2.3'
 
 Input:
-  NAME: Crowdstrike Falcon Mac Sensor
-  CATEGORY: Testing
-  POLICY_CATEGORY: Testing
-  POLICY_NAME: "Install N-1 %NAME%"
+  NAME: Crowdstrike Falcon Mac Sensor Mojave Pinned
+  CATEGORY: Security
+  POLICY_CATEGORY: Security
+  POLICY_NAME: "Install %NAME%"
   POLICY_TEMPLATE: FalconPolicyTemplate.xml
   CLIENT_ID: 123
   CLIENT_SECRET: 123
