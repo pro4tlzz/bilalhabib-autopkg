@@ -17,15 +17,17 @@ Input:
   CLIENT_SECRET: 123
   POLICY_ID: 123
   API_REGION_URL: https://api.crowdstrike.com
-  PARAMETER5_VALUE: 123-E1
   PARAMETER4_VALUE: 123
+  PARAMETER5_VALUE: 123-E1
   SCRIPT_FILENAME: FalconScript.sh
   SCRIPT_PARAMETER4: token
   SCRIPT_PARAMETER5: license
   SCRIPT_NAME: FalconScript.sh
   SCRIPT_PRIORITY: After
-  GROUP_TEMPLATE: AltGroup-N1.xml
-  GROUP_NAME: Falcon Profile Installed, Falcon Agent not installed - N1
+  GROUP_TEMPLATE1: SmartGroup-1.xml
+  GROUP_NAME1: Group 1
+  GROUP_TEMPLATE2: SmartGroup-2.xml
+  GROUP_NAME2: Group2 
   PROFILE_UUID1: 123
   PROFILE_UUID2: 123
 
@@ -37,7 +39,7 @@ Process:
 
 - Processor: StopProcessingIf
   Arguments:
-    predicate: "pkg_uploaded == True"
+    predicate: "pkg_uploaded == false"
 
 - Processor: com.github.grahampugh.jamf-upload.processors/JamfScriptUploader
   Arguments:  
@@ -49,8 +51,14 @@ Process:
 
 - Processor: com.github.grahampugh.jamf-upload.processors/JamfComputerGroupUploader
   Arguments:
-    computergroup_template: "%GROUP_TEMPLATE%"
-    computergroup_name: "%GROUP_NAME%"
+    computergroup_template: "%GROUP_TEMPLATE1%"
+    computergroup_name: "%GROUP_NAME1%"
+    replace_group: "false"
+
+- Processor: com.github.grahampugh.jamf-upload.processors/JamfComputerGroupUploader
+  Arguments:
+    computergroup_template: "%GROUP_TEMPLATE2%"
+    computergroup_name: "%GROUP_NAME2%"
     replace_group: "false"
 
 - Processor: com.github.grahampugh.jamf-upload.processors/JamfPolicyUploader
