@@ -28,8 +28,6 @@ Input:
   GROUP_NAME1: Group 1
   GROUP_TEMPLATE2: SmartGroup-2.xml
   GROUP_NAME2: Group2 
-  PROFILE_UUID1: 123
-  PROFILE_UUID2: 123
 
 Process:
 

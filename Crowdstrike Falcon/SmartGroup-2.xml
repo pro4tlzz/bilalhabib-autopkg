@@ -1,15 +1,15 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <computer_group>
+    <id>272</id>
     <name>%GROUP_NAME2%</name>
     <is_smart>true</is_smart>
-    <criteria>
-        <size>3</size>
         <criterion>
             <name>Application Title</name>
             <priority>0</priority>
             <and_or>and</and_or>
             <search_type>is not</search_type>
             <value>Falcon.app</value>
+            <opening_paren>false</opening_paren>
+            <closing_paren>false</closing_paren>
         </criterion>
         <criterion>
             <name>Operating System Version</name>
@@ -21,11 +21,38 @@
             <closing_paren>false</closing_paren>
         </criterion>
         <criterion>
-            <name>Profile Identifier</name>
+            <name>Profile Name</name>
             <priority>2</priority>
             <and_or>and</and_or>
-            <search_type>is</search_type>
-            <value>%PROFILE_UUID2%</value>
+            <search_type>has</search_type>
+            <value>Crowdstrike Falcon Profile - Privacy Preferences Unsigned</value>
+            <opening_paren>false</opening_paren>
+            <closing_paren>false</closing_paren>
+        </criterion>
+        <criterion>
+            <name>Profile Name</name>
+            <priority>3</priority>
+            <and_or>and</and_or>
+            <search_type>has</search_type>
+            <value>Crowdstrike Falcon Profile - System Extensions Unsigned</value>
+            <opening_paren>false</opening_paren>
+            <closing_paren>false</closing_paren>
+        </criterion>
+        <criterion>
+            <name>Profile Name</name>
+            <priority>4</priority>
+            <and_or>and</and_or>
+            <search_type>has</search_type>
+            <value>Crowdstrike Falcon Profile - Web Content Filter Unsigned</value>
+            <opening_paren>false</opening_paren>
+            <closing_paren>false</closing_paren>
+        </criterion>
+        <criterion>
+            <name>Profile Name</name>
+            <priority>4</priority>
+            <and_or>and</and_or>
+            <search_type>has</search_type>
+            <value>Crowdstrike Falcon Profile - Kernel Extensions Unsigned</value>
             <opening_paren>false</opening_paren>
             <closing_paren>false</closing_paren>
         </criterion>
