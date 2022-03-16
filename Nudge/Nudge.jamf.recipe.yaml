@@ -1,0 +1,42 @@
+Description: |
+  This recipe downloads Nudge from GitHub, creates a smart group with the latest version of Nudge from Github & creates a policy
+Identifier: com.github.pro4tlzz.jamf.Nudge
+ParentRecipe: com.github.erikng.download.Nudge
+MinimumVersion: '2.3'
+
+Input:
+  NAME: Nudge
+  CATEGORY: Nudge
+  POLICY_CATEGORY: Nudge
+  POLICY_NAME: "Install %NAME%"
+  POLICY_TEMPLATE: Nudge-Policy-Template.xml
+  GROUP_NAME: "AutoPkg-%NAME%-update-smart"
+  GROUP_TEMPLATE: SmartGroup-update-smart-regex.xml
+  VERSION_CRITERION: Application Version
+
+Process:
+
+- Arguments:
+    pkg_category: '%CATEGORY%'
+  Processor: com.github.grahampugh.jamf-upload.processors/JamfPackageUploader
+
+- Processor: com.github.grahampugh.recipes.commonprocessors/VersionRegexGenerator
+  Arguments:
+    version: "%version%"
+
+- Arguments:
+    predicate: pkg_uploaded == true
+  Processor: StopProcessingIf
+
+- Processor: com.github.grahampugh.jamf-upload.processors/JamfComputerGroupUploader
+  Arguments:
+    computergroup_template: "%GROUP_TEMPLATE%"
+    computergroup_name: "%GROUP_NAME%"
+    replace_group: "true"
+
+- Processor: com.github.grahampugh.jamf-upload.processors/JamfPolicyUploader
+  Arguments:
+    policy_template: "%POLICY_TEMPLATE%"
+    policy_name: "%POLICY_NAME%"
+    computergroup_name: "%GROUP_NAME%"
+    replace_policy: "true"
