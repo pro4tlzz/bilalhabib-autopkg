@@ -11,9 +11,9 @@ Input:
   POLICY_NAME: "Install %NAME%"
   POLICY_TEMPLATE: Nudge-Policy-Template.xml
   GROUP_NAME1: "AutoPkg-%NAME%-update-smart"
-  GROUP_TEMPLATE1: SmartGroup-update-smart-regex.xml
+  GROUP_TEMPLATE1: Nudge-SmartGroup-update-smart-regex.xml
   GROUP_NAME2: "AutoPkg-%NAME%-install"
-  GROUP_TEMPLATE2: SmartGroup-install.xml
+  GROUP_TEMPLATE2: Nudge-SmartGroup-install.xml
   VERSION_CRITERION: Application Version
   SLACK_WEBHOOK: https://hooks.slack.com/services
 

@@ -94,6 +94,6 @@
         <spotlight_search/>
         <search_for_process/>
         <kill_process>false</kill_process>
-        <run_command>/usr/local/bin/jamf policy -id a policy to run erase install?</run_command>
+        <run_command>/usr/local/bin/jamf policy -id a policy to install images & LA</run_command>
     </files_processes>
 </policy>
