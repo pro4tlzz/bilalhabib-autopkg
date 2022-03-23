@@ -10,9 +10,12 @@ Input:
   POLICY_CATEGORY: Nudge
   POLICY_NAME: "Install %NAME%"
   POLICY_TEMPLATE: Nudge-Policy-Template.xml
-  GROUP_NAME: "AutoPkg-%NAME%-update-smart"
-  GROUP_TEMPLATE: SmartGroup-update-smart-regex.xml
+  GROUP_NAME1: "AutoPkg-%NAME%-update-smart"
+  GROUP_TEMPLATE1: SmartGroup-update-smart-regex.xml
+  GROUP_NAME2: "AutoPkg-%NAME%-install"
+  GROUP_TEMPLATE2: SmartGroup-install.xml
   VERSION_CRITERION: Application Version
+  SLACK_WEBHOOK: https://hooks.slack.com/services
 
 Process:
 
@@ -30,13 +33,25 @@ Process:
 
 - Processor: com.github.grahampugh.jamf-upload.processors/JamfComputerGroupUploader
   Arguments:
-    computergroup_template: "%GROUP_TEMPLATE%"
-    computergroup_name: "%GROUP_NAME%"
+    computergroup_template: "%GROUP_TEMPLATE1%"
+    computergroup_name: "%GROUP_NAME1%"
+    replace_group: "true"
+
+- Processor: com.github.grahampugh.jamf-upload.processors/JamfComputerGroupUploader
+  Arguments:
+    computergroup_template: "%GROUP_TEMPLATE2%"
+    computergroup_name: "%GROUP_NAME2%"
     replace_group: "true"
 
 - Processor: com.github.grahampugh.jamf-upload.processors/JamfPolicyUploader
   Arguments:
     policy_template: "%POLICY_TEMPLATE%"
     policy_name: "%POLICY_NAME%"
-    computergroup_name: "%GROUP_NAME%"
+    computergroup_name: "%GROUP_NAME1%,%GROUP_NAME2%"
     replace_policy: "true"
+
+- Processor: com.github.grahampugh.jamf-upload.processors/JamfUploaderSlacker
+  Arguments:
+    version: "%version%"
+    slack_webhook_url: "%SLACK_WEBHOOK%"
+    PKG_CATEGORY: '%CATEGORY%'

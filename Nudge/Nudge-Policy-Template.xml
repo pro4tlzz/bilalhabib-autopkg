@@ -3,7 +3,7 @@
         <name>%POLICY_NAME%</name>
         <enabled>true</enabled>
         <trigger>CHECKIN</trigger>
-        <trigger_checkin>false</trigger_checkin>
+        <trigger_checkin>true</trigger_checkin>
         <trigger_enrollment_complete>false</trigger_enrollment_complete>
         <trigger_login>false</trigger_login>
         <trigger_network_state_changed>false</trigger_network_state_changed>
@@ -28,7 +28,10 @@
         <computers/>
         <computer_groups>
             <computer_group>
-                <name>%GROUP_NAME%</name>
+                <name>%GROUP_NAME1%</name>
+            </computer_group>
+            <computer_group>
+                <name>%GROUP_NAME2%</name>
             </computer_group>
         </computer_groups>
         <buildings/>
@@ -46,7 +49,7 @@
             <computers/>
             <computer_groups>
                 <computer_group>
-                    <name>$AN EXISTING GROUP</name>
+                    <name>A GROUP TO EXCLUDE</name>
                 </computer_group>
             </computer_groups>
             <buildings/>
@@ -91,6 +94,6 @@
         <spotlight_search/>
         <search_for_process/>
         <kill_process>false</kill_process>
-        <run_command>/usr/local/bin/jamf policy -id A Policy With branding, LaunchAgent & Logging</run_command>
+        <run_command>/usr/local/bin/jamf policy -id a policy to run erase install?</run_command>
     </files_processes>
 </policy>

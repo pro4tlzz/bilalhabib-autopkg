@@ -1,8 +1,7 @@
 <computer_group>
-    <name>%GROUP_NAME1%</name>
+    <name>%GROUP_NAME2%</name>
     <is_smart>true</is_smart>
     <criteria>
-        <size>4</size>
         <criterion>
             <name>Operating System Version</name>
             <priority>0</priority>
@@ -16,17 +15,8 @@
             <name>Application Title</name>
             <priority>1</priority>
             <and_or>and</and_or>
-            <search_type>is</search_type>
+            <search_type>is not</search_type>
             <value>Nudge.app</value>
-            <opening_paren>false</opening_paren>
-            <closing_paren>false</closing_paren>
-        </criterion>
-        <criterion>
-            <name>Application Version</name>
-            <priority>2</priority>
-            <and_or>and</and_or>
-            <search_type>does not match regex</search_type>
-            <value>%version_regex%</value>
             <opening_paren>false</opening_paren>
             <closing_paren>false</closing_paren>
         </criterion>
