@@ -47,7 +47,6 @@ Process:
   Arguments:
     policy_template: "%POLICY_TEMPLATE%"
     policy_name: "%POLICY_NAME%"
-    computergroup_name: "%GROUP_NAME1%,%GROUP_NAME2%"
     replace_policy: "true"
 
 - Processor: com.github.grahampugh.jamf-upload.processors/JamfUploaderSlacker
