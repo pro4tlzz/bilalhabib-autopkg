@@ -11,7 +11,7 @@ Input:
   POLICY_TEMPLATE: erase-install-policy-template.xml 
   VERSION_CRITERION: Application Version
   GROUP_NAME: Monterey Compatible Test
-  GROUP_TEMPLATE: SmartGroup-update-smart-regex.xml
+  GROUP_TEMPLATE: erase-install-SmartGroup.xml
   SLACK_WEBHOOK: https://hooks.slack.com/services/KEY
 MinimumVersion: '2.3'
 ParentRecipe: com.github.pro4tlzz.download.erase-install
@@ -35,7 +35,6 @@ Process:
   Arguments:
     policy_template: "%POLICY_TEMPLATE%"
     policy_name: "%POLICY_NAME%"
-    computergroup_name: "%GROUP_NAME%"
     replace_policy: "true"
 
 - Processor: com.github.grahampugh.jamf-upload.processors/JamfUploaderSlacker
