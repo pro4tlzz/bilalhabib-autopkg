@@ -3,15 +3,13 @@ Description: 'This recipe downloads Erase-Install from GitHub, creates a smart g
 Identifier: com.github.pro4tlzz.jamf.erase-install
 Input:
   CATEGORY: OS
-  GROUP_NAME: AutoPkg-%NAME%-update-smart
-  GROUP_TEMPLATE: SmartGroup-update-smart-regex.xml
+  GROUP_NAME: Monterey Compatible
+  GROUP_TEMPLATE: erase-install-SmartGroup.xml
   NAME: Erase-Install
   POLICY_CATEGORY: OS
   POLICY_NAME: Install %NAME%
   POLICY_TEMPLATE: erase-install-policy-template.xml 
   VERSION_CRITERION: Application Version
-  GROUP_NAME: Monterey Compatible Test
-  GROUP_TEMPLATE: erase-install-SmartGroup.xml
   SLACK_WEBHOOK: https://hooks.slack.com/services/KEY
 MinimumVersion: '2.3'
 ParentRecipe: com.github.pro4tlzz.download.erase-install
