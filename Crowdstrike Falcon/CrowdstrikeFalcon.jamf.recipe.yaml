@@ -64,3 +64,5 @@ Process:
     policy_name: "%POLICY_NAME%"
     policy_template: "%POLICY_TEMPLATE%"
     replace_policy: "false"
+    jamfpackageuploader_summary_result: 'true'
+    jamfpolicyuploader_summary_result: 'true'

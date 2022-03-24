@@ -54,3 +54,5 @@ Process:
     version: "%version%"
     slack_webhook_url: "%SLACK_WEBHOOK%"
     PKG_CATEGORY: '%CATEGORY%'
+    jamfpackageuploader_summary_result: 'true'
+    jamfpolicyuploader_summary_result: 'true'
