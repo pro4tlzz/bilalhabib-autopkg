@@ -1,6 +1,7 @@
 <computer_group>
     <name>%GROUP_NAME2%</name>
     <is_smart>true</is_smart>
+    <criteria>
         <criterion>
             <name>Application Title</name>
             <priority>0</priority>
