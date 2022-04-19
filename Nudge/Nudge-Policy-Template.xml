@@ -8,7 +8,7 @@
         <trigger_login>false</trigger_login>
         <trigger_network_state_changed>false</trigger_network_state_changed>
         <trigger_startup>false</trigger_startup>
-        <trigger_other/>
+        <trigger_other>install-nudge</trigger_other>
         <frequency>Ongoing</frequency>
         <retry_event>none</retry_event>
         <retry_attempts>-1</retry_attempts>
@@ -94,6 +94,6 @@
         <spotlight_search/>
         <search_for_process/>
         <kill_process>false</kill_process>
-        <run_command>/usr/local/bin/jamf policy -id a policy to install images & LA</run_command>
+        <run_command>/usr/local/bin/jamf policy -event a policy to install images & LA</run_command>
     </files_processes>
 </policy>
