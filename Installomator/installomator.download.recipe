@@ -1,0 +1,12 @@
+Description: "Download Installomator.sh"
+Identifier: com.github.pro4tlzz.download.installomator
+Input: 
+  directory: "."
+  download_url: "https://raw.githubusercontent.com/Installomator/Installomator/main/Installomator.sh"
+MinimumVersion: "2.3"
+Process: 
+  - 
+    Arguments: 
+      download_dir: "%directory%"
+      url: "%download_url%"
+    Processor: CURLDownloader
