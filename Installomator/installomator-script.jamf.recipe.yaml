@@ -21,4 +21,5 @@ Process:
       script_parameter6: "%SCRIPT_PARAMETER6%"
       script_parameter7: "%SCRIPT_PARAMETER7%"
       script_parameter8: "%SCRIPT_PARAMETER8%"
+      replace_script: "false"
     Processor: com.github.grahampugh.jamf-upload.processors/JamfScriptUploader
