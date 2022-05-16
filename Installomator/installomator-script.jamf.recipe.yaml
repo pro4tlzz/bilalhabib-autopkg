@@ -1,0 +1,24 @@
+Description: "Upload Installomator.sh"
+Identifier: com.github.pro4tlzz.jamf.installomator-script
+ParentRecipe: com.github.pro4tlzz.download.installomator
+Input: 
+  NAME: "Installomator"
+  directory: "."
+  SCRIPT_NAME: "installomator.sh"
+  SCRIPT_PARAMETER4: "App Label"
+  SCRIPT_PARAMETER5: "Blocking Process actions"
+  SCRIPT_PARAMETER6: "Debug"
+  SCRIPT_PARAMETER7: "Noify"
+  SCRIPT_PARAMETER: "Install Behaviour"
+
+MinimumVersion: "2.3"
+Process: 
+  - 
+    Arguments: 
+      script_path: "%SCRIPT_NAME%"
+      script_parameter4: "%SCRIPT_PARAMETER4%"
+      script_parameter5: "%SCRIPT_PARAMETER5%"
+      script_parameter6: "%SCRIPT_PARAMETER6%"
+      script_parameter7: "%SCRIPT_PARAMETER7%"
+      script_parameter8: "%SCRIPT_PARAMETER8%"
+    Processor: com.github.grahampugh.jamf-upload.processors/JamfScriptUploader
