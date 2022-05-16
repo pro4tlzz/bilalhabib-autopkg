@@ -9,7 +9,7 @@ Input:
   SCRIPT_PARAMETER5: "Blocking Process actions"
   SCRIPT_PARAMETER6: "Debug"
   SCRIPT_PARAMETER7: "Noify"
-  SCRIPT_PARAMETER: "Install Behaviour"
+  SCRIPT_PARAMETER8: "Install Behaviour"
 
 MinimumVersion: "2.3"
 Process: 
