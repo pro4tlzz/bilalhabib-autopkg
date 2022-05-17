@@ -3,7 +3,7 @@ Identifier: com.github.pro4tlzz.jamf.installomator
 ParentRecipe: com.github.pro4tlzz.download.installomator
 Input: 
   NAME: "Installomator"
-  directory: "."
+  pathname: "%pathname$"
   SCRIPT_NAME: "installomator.sh"
   SCRIPT_PARAMETER4: "App Label"
   SCRIPT_PARAMETER5: "Blocking Process actions"
