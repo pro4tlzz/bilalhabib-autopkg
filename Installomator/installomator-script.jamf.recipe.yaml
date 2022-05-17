@@ -1,5 +1,5 @@
 Description: "Upload Installomator.sh"
-Identifier: com.github.pro4tlzz.jamf.installomator-script
+Identifier: com.github.pro4tlzz.jamf.installomator
 ParentRecipe: com.github.pro4tlzz.download.installomator
 Input: 
   NAME: "Installomator"
