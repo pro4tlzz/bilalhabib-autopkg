@@ -16,7 +16,7 @@ MinimumVersion: "2.3"
 Process: 
   - 
     Arguments: 
-      script_path: "%SCRIPT_NAME%"
+      script_path: "%pathname%"
       script_parameter4: "%SCRIPT_PARAMETER4%"
       script_parameter5: "%SCRIPT_PARAMETER5%"
       script_parameter6: "%SCRIPT_PARAMETER6%"
