@@ -29,7 +29,7 @@ Process:
     version: "%version%"
 
 - Arguments:
-    predicate: pkg_uploaded == true
+    predicate: pkg_uploaded == false
   Processor: StopProcessingIf
 
 - Processor: com.github.grahampugh.jamf-upload.processors/JamfComputerGroupUploader
