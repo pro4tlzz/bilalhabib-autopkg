@@ -1,0 +1,17 @@
+Description: |
+  This recipe downloads Nudge from GitHub
+Identifier: com.github.pro4tlzz.jamf.Nudge-download
+ParentRecipe: com.github.erikng.download.Nudge
+MinimumVersion: '2.3'
+
+Input:
+  NAME: Nudge
+  CATEGORY: Nudge
+  POLICY_CATEGORY: Nudge
+
+Process:
+
+- Arguments:
+    pkg_category: '%CATEGORY%'
+    replace_pkg: "true"
+  Processor: com.github.grahampugh.jamf-upload.processors/JamfPackageUploader
