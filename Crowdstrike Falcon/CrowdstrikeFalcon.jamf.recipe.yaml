@@ -26,8 +26,6 @@ Input:
   SCRIPT_PRIORITY: After
   GROUP_TEMPLATE1: CrowdstrikeFalcon-SmartGroup-1.xml
   GROUP_NAME1: Group 1
-  GROUP_TEMPLATE2: CrowdstrikeFalcon-SmartGroup-2.xml 
-  GROUP_NAME2: Group2 
 
 Process:
 
@@ -51,12 +49,6 @@ Process:
   Arguments:
     computergroup_template: "%GROUP_TEMPLATE1%"
     computergroup_name: "%GROUP_NAME1%"
-    replace_group: "false"
-
-- Processor: com.github.grahampugh.jamf-upload.processors/JamfComputerGroupUploader
-  Arguments:
-    computergroup_template: "%GROUP_TEMPLATE2%"
-    computergroup_name: "%GROUP_NAME2%"
     replace_group: "false"
 
 - Processor: com.github.grahampugh.jamf-upload.processors/JamfPolicyUploader
