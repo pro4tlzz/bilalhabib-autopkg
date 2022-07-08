@@ -19,10 +19,6 @@
 			<computer_group>
 				<name>%GROUP_NAME1%</name>
 			</computer_group>
-            <computer_group>
-				<name>%GROUP_NAME2%</name>
-			</computer_group>
-		</computer_groups>
 	</scope>
     <package_configuration>
         <packages>
